@@ -97,10 +97,10 @@ export default function Careers() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative bg-black dark:bg-neutral-950 py-24 overflow-hidden">
+      <section className="relative bg-neutral-950 py-24 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute top-1/2 -left-32 w-96 h-96 bg-brand-500/15 rounded-full blur-[120px]" />
-        <div className="container-page relative z-10">
+        <Reveal className="container-page relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6">
             <GraduationCap className="w-3.5 h-3.5" />
             INTERNSHIP PROGRAM 2026
@@ -113,22 +113,22 @@ export default function Careers() {
             mentorship from industry experts, and build a real foundation in
             cybersecurity.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Benefits */}
       <section className="surface py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Why Join</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Why Join</span>
             <h2 className="section-title mt-3">What you'll get</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, i) => (
               <Reveal key={benefit.title} delay={i * 80}>
                 <div className="card text-center h-full hover:-translate-y-1.5 transition-transform duration-300">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mx-auto mb-5 hover:scale-110 transition-transform">
-                    <benefit.icon className="w-7 h-7 text-brand-600 dark:text-brand-400" />
+                  <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mx-auto mb-5 hover:scale-110 transition-transform">
+                    <benefit.icon className="w-7 h-7 text-brand-400" />
                   </div>
                   <h3 className="font-bold text-base mb-2">{benefit.title}</h3>
                   <p className="text-sm text-muted-strong leading-relaxed">{benefit.desc}</p>
@@ -143,7 +143,7 @@ export default function Careers() {
       <section className="surface-alt py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Choose Your Path</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Choose Your Path</span>
             <h2 className="section-title mt-3">Internship tracks</h2>
             <p className="mt-4 text-muted">
               Select the area of cybersecurity that interests you most. You'll be trained
@@ -162,16 +162,16 @@ export default function Careers() {
                 }`}
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
-                  form.track === track.name ? 'bg-brand-500' : 'bg-brand-50 border border-brand-100'
+                  form.track === track.name ? 'bg-brand-500' : 'bg-brand-500/10 border border-brand-500/20'
                 }`}>
                   <track.icon className={`w-6 h-6 transition-colors ${
-                    form.track === track.name ? 'text-black' : 'text-brand-600'
+                    form.track === track.name ? 'text-black' : 'text-brand-400'
                   }`} />
                 </div>
                 <h3 className="font-bold text-base mb-1">{track.name}</h3>
                 <p className="text-xs text-muted-soft leading-relaxed">{track.desc}</p>
                 {form.track === track.name && (
-                  <div className="flex items-center gap-1.5 mt-3 text-xs font-semibold text-brand-600">
+                  <div className="flex items-center gap-1.5 mt-3 text-xs font-semibold text-brand-400">
                     <CheckCircle2 className="w-4 h-4" />
                     Selected
                   </div>
@@ -187,14 +187,14 @@ export default function Careers() {
       <section className="surface py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">How It Works</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">How It Works</span>
             <h2 className="section-title mt-3">Program process</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {programSteps.map((p, i) => (
               <Reveal key={p.step} delay={i * 100}>
                 <div className="text-center hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-5xl font-bold text-brand-100 dark:text-brand-500/20">{p.step}</div>
+                  <div className="text-5xl font-bold text-brand-500/20">{p.step}</div>
                   <h3 className="text-lg font-bold mt-2 mb-2">{p.title}</h3>
                   <p className="text-sm text-muted-strong leading-relaxed">{p.desc}</p>
                 </div>
@@ -209,7 +209,7 @@ export default function Careers() {
         <div className="container-page">
           <div className="max-w-2xl mx-auto">
             <Reveal className="text-center mb-10">
-              <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Apply Now</span>
+              <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Apply Now</span>
               <h2 className="section-title mt-3">Internship registration</h2>
               <p className="mt-4 text-muted">
                 Fill out the form below to apply for the Rynex Security Internship Program.
@@ -219,8 +219,8 @@ export default function Careers() {
 
             {status === 'success' ? (
               <div className="card text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-5">
-                  <CheckCircle2 className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-5">
+                  <CheckCircle2 className="w-8 h-8 text-green-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Application Submitted!</h3>
                 <p className="text-muted max-w-md mx-auto">
@@ -238,7 +238,7 @@ export default function Careers() {
             ) : (
               <form onSubmit={handleSubmit} className="card space-y-5">
                 {status === 'error' && (
-                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                  <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
                     {errorMsg}
                   </div>
                 )}
@@ -328,7 +328,7 @@ export default function Careers() {
                     required
                     value={form.track}
                     onChange={handleChange}
-                    className="input-field bg-white dark:bg-neutral-800"
+                    className="input-field bg-neutral-800"
                   >
                     <option value="">Select a track</option>
                     {tracks.map((t) => (
@@ -386,7 +386,7 @@ export default function Careers() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black dark:bg-neutral-900 py-16 relative overflow-hidden">
+      <section className="bg-neutral-900 py-16 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <Reveal className="container-page relative z-10 text-center">
           <h2 className="text-2xl font-bold text-white tracking-tight">Have questions about the program?</h2>

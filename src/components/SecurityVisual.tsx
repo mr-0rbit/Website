@@ -28,7 +28,7 @@ export default function SecurityVisual() {
                 style={{ transform: `translate(${x}px, ${y}px)` }}
               >
                 <div
-                  className="w-12 h-12 rounded-xl bg-white/10 dark:bg-white/5 border border-brand-500/30 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-brand/10"
+                  className="w-12 h-12 rounded-xl bg-white/5 border border-brand-500/30 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-brand/10"
                   style={{ transform: 'rotateY(0deg)', backfaceVisibility: 'hidden' }}
                 >
                   <Icon className="w-5 h-5 text-brand-500" />

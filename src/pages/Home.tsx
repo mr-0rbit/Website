@@ -70,51 +70,54 @@ export default function Home() {
 
         <div className="container-page relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6 animate-fade-in">
-                <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
-                CYBER SECURITY SOLUTIONS — PAKISTAN
+            <Reveal>
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6">
+                  <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
+                  CYBER SECURITY SOLUTIONS — PAKISTAN
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+                  Detect. Exploit.{' '}
+                  <span className="text-brand-500">Secure.</span>
+                </h1>
+
+                <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-lg">
+                  Rynex Security delivers enterprise-grade cybersecurity services — from
+                  penetration testing to 24/7 monitoring — helping businesses across Pakistan
+                  stay ahead of evolving threats.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link to="/services" className="btn-primary">
+                    Explore Services
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link to="/contact" className="btn-outline">
+                    Get a Quote
+                  </Link>
+                </div>
+
+                <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
+                  {stats.map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-2xl sm:text-3xl font-bold text-brand-500">{stat.value}</div>
+                      <div className="text-xs text-white/40 mt-1">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
+            </Reveal>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight animate-fade-up">
-                Detect. Exploit.{' '}
-                <span className="text-brand-500">Secure.</span>
-              </h1>
-
-              <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-lg animate-fade-up" style={{ animationDelay: '0.1s' }}>
-                Rynex Security delivers enterprise-grade cybersecurity services — from
-                penetration testing to 24/7 monitoring — helping businesses across Pakistan
-                stay ahead of evolving threats.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                <Link to="/services" className="btn-primary">
-                  Explore Services
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link to="/contact" className="btn-outline !text-white !border-white/20 hover:!border-brand-500 hover:!text-brand-500">
-                  Get a Quote
-                </Link>
+            <Reveal variant="right" delay={150}>
+              <div className="hidden lg:flex justify-center">
+                <SecurityVisual />
               </div>
-
-              <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl sm:text-3xl font-bold text-brand-500">{stat.value}</div>
-                    <div className="text-xs text-white/40 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* 3D Security Visual */}
-            <div className="hidden lg:flex justify-center">
-              <SecurityVisual />
-            </div>
+            </Reveal>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent" />
       </section>
 
       {/* Tagline Banner */}
@@ -124,7 +127,7 @@ export default function Home() {
             {['Detect', 'Exploit', 'Secure'].map((word, i) => (
               <div key={word} className="flex items-center gap-8 md:gap-16">
                 <Reveal delay={i * 120} className="flex flex-col items-center gap-3">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-500/10 border border-brand-200 dark:border-brand-500/20 flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
                     {[ShieldCheck, ShieldAlert, ShieldCheck][i] && (
                       (() => {
                         const Icon = [ShieldCheck, ShieldAlert, ShieldCheck][i];
@@ -145,7 +148,7 @@ export default function Home() {
       <section className="surface-alt py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">What We Do</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">What We Do</span>
             <h2 className="section-title mt-3">Our Core Services</h2>
             <p className="mt-4 text-muted">
               Comprehensive cybersecurity solutions designed to protect, detect, and respond
@@ -157,8 +160,8 @@ export default function Home() {
             {services.map((service, i) => (
               <Reveal key={service.title} delay={i * 80}>
                 <div className="card group h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:scale-110 transition-all duration-300">
-                    <service.icon className="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:text-black transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:scale-110 transition-all duration-300">
+                    <service.icon className="w-6 h-6 text-brand-400 group-hover:text-black transition-colors duration-300" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">{service.title}</h3>
                   <p className="text-sm text-muted-strong leading-relaxed">{service.desc}</p>
@@ -179,8 +182,8 @@ export default function Home() {
       <section className="surface py-20">
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <Reveal>
-              <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Why Rynex</span>
+            <Reveal variant="left">
+              <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Why Rynex</span>
               <h2 className="section-title mt-3">Security built on offensive mindset</h2>
               <p className="mt-4 text-muted leading-relaxed">
                 We don't just check boxes. Our team approaches every engagement with an
@@ -192,7 +195,7 @@ export default function Home() {
                 {features.map((feature, i) => (
                   <Reveal key={feature.title} delay={i * 100}>
                     <div className="flex gap-4 p-4 rounded-xl hover:bg-brand-50 dark:hover:bg-white/5 transition-colors duration-300">
-                      <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center hover:scale-110 transition-transform">
                         <feature.icon className="w-5 h-5 text-brand-600 dark:text-brand-400" />
                       </div>
                       <div>
@@ -205,10 +208,10 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal delay={150}>
+            <Reveal variant="right" delay={150}>
               <div className="relative">
                 <div className="absolute inset-0 grid-bg rounded-3xl opacity-30" />
-                <div className="relative bg-black dark:bg-neutral-900 rounded-3xl p-8 overflow-hidden hover:shadow-2xl hover:shadow-brand/10 transition-shadow duration-500">
+                <div className="relative bg-neutral-900 rounded-3xl p-8 overflow-hidden hover:shadow-2xl hover:shadow-brand/10 transition-shadow duration-500">
                   <div className="absolute top-0 right-0 w-48 h-48 bg-brand-500/20 rounded-full blur-[80px]" />
                   <div className="relative font-mono text-sm space-y-2">
                     <div className="flex items-center gap-2 text-white/40 mb-4">
@@ -240,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black dark:bg-neutral-900 py-20 relative overflow-hidden">
+      <section className="bg-neutral-900 py-20 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/10 rounded-full blur-[120px]" />
         <Reveal className="container-page relative z-10 text-center">
@@ -256,7 +259,7 @@ export default function Home() {
               Contact Us
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/careers" className="btn-outline !text-white !border-white/20 hover:!border-brand-500 hover:!text-brand-500">
+            <Link to="/careers" className="btn-outline">
               Join Our Internship Program
             </Link>
           </div>

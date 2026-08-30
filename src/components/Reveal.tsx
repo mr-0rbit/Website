@@ -5,9 +5,10 @@ type RevealProps = {
   className?: string;
   delay?: number;
   as?: 'div' | 'section' | 'li' | 'article' | 'span';
+  variant?: 'up' | 'left' | 'right' | 'scale';
 };
 
-export default function Reveal({ children, className = '', delay = 0, as = 'div' }: RevealProps) {
+export default function Reveal({ children, className = '', delay = 0, as = 'div', variant = 'up' }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -27,12 +28,18 @@ export default function Reveal({ children, className = '', delay = 0, as = 'div'
     return () => observer.disconnect();
   }, [delay]);
 
+  const variantClass =
+    variant === 'left' ? 'reveal-left' :
+    variant === 'right' ? 'reveal-right' :
+    variant === 'scale' ? 'reveal-scale' :
+    'reveal';
+
   const Tag = as as 'div';
 
   return (
     <Tag
       ref={ref as RefObject<HTMLDivElement>}
-      className={`reveal ${className}`}
+      className={`${variantClass} ${className}`}
     >
       {children}
     </Tag>

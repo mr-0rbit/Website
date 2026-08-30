@@ -49,11 +49,11 @@ export default function Events() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative bg-black dark:bg-neutral-950 py-24 overflow-hidden">
+      <section className="relative bg-neutral-950 py-24 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px]" />
-        <div className="container-page relative z-10">
-          <span className="text-xs font-mono text-brand-500 tracking-widest uppercase">Events</span>
+        <Reveal className="container-page relative z-10">
+          <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Events</span>
           <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight">
             Workshops, CTFs & community
           </h1>
@@ -61,7 +61,7 @@ export default function Events() {
             Join our events to learn, compete, and connect with the cybersecurity
             community. From hands-on workshops to Capture the Flag competitions.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Upcoming Events */}
@@ -77,7 +77,7 @@ export default function Events() {
               <Reveal key={event.title} delay={i * 100}>
                 <div className="card flex flex-col lg:flex-row gap-6 lg:items-center hover:shadow-lg hover:shadow-brand/5 hover:-translate-y-0.5 transition-all">
                   <div className="lg:w-48 flex-shrink-0">
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 text-xs font-mono font-semibold mb-3">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-mono font-semibold mb-3">
                       {event.tag}
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-soft">
@@ -120,15 +120,15 @@ export default function Events() {
       <section className="surface-alt py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">What We Host</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">What We Host</span>
             <h2 className="section-title mt-3">Types of events</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {eventTypes.map((item, i) => (
               <Reveal key={item.title} delay={i * 100}>
                 <div className="card text-center h-full hover:-translate-y-1.5 transition-transform duration-300">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mx-auto mb-5 hover:scale-110 transition-transform">
-                    <item.icon className="w-7 h-7 text-brand-600 dark:text-brand-400" />
+                  <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mx-auto mb-5 hover:scale-110 transition-transform">
+                    <item.icon className="w-7 h-7 text-brand-400" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-strong leading-relaxed">{item.desc}</p>
@@ -163,7 +163,7 @@ export default function Events() {
                       </span>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-500/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-mono text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
                     Completed
                   </span>
                 </div>
@@ -174,7 +174,7 @@ export default function Events() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black dark:bg-neutral-900 py-20 relative overflow-hidden">
+      <section className="bg-neutral-900 py-20 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-brand-500/10 rounded-full blur-[100px]" />
         <Reveal className="container-page relative z-10 text-center">

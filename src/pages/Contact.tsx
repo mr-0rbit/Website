@@ -72,11 +72,11 @@ export default function Contact() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative bg-black dark:bg-neutral-950 py-24 overflow-hidden">
+      <section className="relative bg-neutral-950 py-24 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-brand-500/15 rounded-full blur-[120px]" />
-        <div className="container-page relative z-10">
-          <span className="text-xs font-mono text-brand-500 tracking-widest uppercase">Contact</span>
+        <Reveal className="container-page relative z-10">
+          <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Contact</span>
           <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight">
             Let's secure your organization
           </h1>
@@ -84,7 +84,7 @@ export default function Contact() {
             Whether you need a penetration test, a security audit, or just have a question —
             we're here to help. Reach out and we'll get back to you within 24 hours.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Contact Info Cards */}
@@ -94,12 +94,12 @@ export default function Contact() {
             {contactInfo.map((info, i) => (
               <Reveal key={info.label} delay={i * 80}>
               <div className="card text-center hover:-translate-y-1 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center mx-auto mb-4">
-                  <info.icon className="w-6 h-6 text-brand-600" />
+                <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mx-auto mb-4">
+                  <info.icon className="w-6 h-6 text-brand-400" />
                 </div>
-                <h3 className="text-xs font-mono text-brand-600 uppercase tracking-wide mb-2">{info.label}</h3>
+                <h3 className="text-xs font-mono text-brand-400 uppercase tracking-wide mb-2">{info.label}</h3>
                 {info.href ? (
-                  <a href={info.href} className="text-sm font-semibold hover:text-brand-600 transition-colors break-all">
+                  <a href={info.href} className="text-sm font-semibold hover:text-brand-400 transition-colors break-all">
                     {info.value}
                   </a>
                 ) : (
@@ -117,9 +117,9 @@ export default function Contact() {
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Info */}
-            <Reveal>
+            <Reveal variant="left">
             <div>
-              <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Get in Touch</span>
+              <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Get in Touch</span>
               <h2 className="section-title mt-3">Send us a message</h2>
               <p className="mt-4 text-muted leading-relaxed">
                 Fill out the form and our team will get back to you as soon as possible.
@@ -127,18 +127,18 @@ export default function Contact() {
               </p>
 
               <div className="mt-8 space-y-4">
-                <a href="mailto:info@rynexsecurity.com" className="flex items-center gap-4 p-4 rounded-xl surface border border-soft hover:border-brand/30 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-brand-600" />
+                <a href="mailto:info@rynexsecurity.com" className="flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-white/10 hover:border-brand/30 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-brand-400" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-soft">Email us at</div>
                     <div className="text-sm font-semibold">info@rynexsecurity.com</div>
                   </div>
                 </a>
-                <a href="tel:03272873812" className="flex items-center gap-4 p-4 rounded-xl surface border border-soft hover:border-brand/30 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-brand-600" />
+                <a href="tel:03272873812" className="flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-white/10 hover:border-brand/30 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-brand-400" />
                   </div>
                   <div>
                     <div className="text-xs text-muted-soft">Call us at</div>
@@ -154,7 +154,7 @@ export default function Contact() {
                     <a
                       key={social.label}
                       href={social.href}
-                      className="px-4 py-2 rounded-lg surface border border-soft text-sm font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                      className="px-4 py-2 rounded-lg bg-neutral-900 border border-white/10 text-sm font-medium hover:border-brand-500 hover:text-brand-400 transition-colors"
                     >
                       {social.label}
                     </a>
@@ -165,12 +165,12 @@ export default function Contact() {
             </Reveal>
 
             {/* Right: Form */}
-            <Reveal delay={120}>
+            <Reveal variant="right" delay={120}>
             <div>
               {status === 'success' ? (
                 <div className="card text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-5">
-                    <CheckCircle2 className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-5">
+                    <CheckCircle2 className="w-8 h-8 text-green-400" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
                   <p className="text-muted max-w-sm mx-auto">
@@ -187,7 +187,7 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="card space-y-5">
                   {status === 'error' && (
-                    <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                    <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
                       {errorMsg}
                     </div>
                   )}
@@ -253,7 +253,7 @@ export default function Contact() {
                       rows={5}
                       value={form.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-lg border border-black/10 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all resize-none"
+                      className="w-full px-4 py-2.5 rounded-lg border border-white/10 bg-neutral-800 text-white focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all resize-none"
                       placeholder="Tell us about your requirements..."
                     />
                   </div>
@@ -275,7 +275,7 @@ export default function Contact() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black dark:bg-neutral-900 py-16 relative overflow-hidden">
+      <section className="bg-neutral-900 py-16 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-brand-500/10 rounded-full blur-[100px]" />
         <Reveal className="container-page relative z-10 text-center">

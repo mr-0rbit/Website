@@ -30,11 +30,11 @@ export default function About() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative bg-black dark:bg-neutral-950 py-24 overflow-hidden">
+      <section className="relative bg-neutral-950 py-24 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px]" />
-        <div className="container-page relative z-10">
-          <span className="text-xs font-mono text-brand-500 tracking-widest uppercase">About Us</span>
+        <Reveal className="container-page relative z-10">
+          <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">About Us</span>
           <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight">
             Securing what matters most
           </h1>
@@ -42,17 +42,17 @@ export default function About() {
             Rynex Security is a Pakistan-based cybersecurity company built on a simple
             principle: to protect organizations, you must first understand how to breach them.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Mission & Vision */}
       <section className="surface py-20">
         <div className="container-page">
           <div className="grid md:grid-cols-2 gap-8">
-            <Reveal>
+            <Reveal variant="left">
               <div className="card border-l-4 border-l-brand-500 h-full hover:-translate-y-1 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mb-5">
-                  <Target className="w-6 h-6 text-brand-600 dark:text-brand-400" />
+                <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-5">
+                  <Target className="w-6 h-6 text-brand-400" />
                 </div>
                 <h2 className="text-xl font-bold mb-3">Our Mission</h2>
                 <p className="text-muted leading-relaxed">
@@ -62,10 +62,10 @@ export default function About() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal variant="right" delay={120}>
               <div className="card border-l-4 border-l-brand-500 h-full hover:-translate-y-1 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mb-5">
-                  <Eye className="w-6 h-6 text-brand-600 dark:text-brand-400" />
+                <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-5">
+                  <Eye className="w-6 h-6 text-brand-400" />
                 </div>
                 <h2 className="text-xl font-bold mb-3">Our Vision</h2>
                 <p className="text-muted leading-relaxed">
@@ -83,7 +83,7 @@ export default function About() {
       <section className="surface-alt py-20">
         <div className="container-page">
           <Reveal className="max-w-3xl mx-auto text-center">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Our Philosophy</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Our Philosophy</span>
             <h2 className="section-title mt-3">Detect. Exploit. Secure.</h2>
             <p className="mt-5 text-muted leading-relaxed">
               These three words define everything we do. We <strong>detect</strong> threats
@@ -100,15 +100,15 @@ export default function About() {
       <section className="surface py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Our Values</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Our Values</span>
             <h2 className="section-title mt-3">What drives us forward</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i * 100}>
                 <div className="card text-center h-full hover:-translate-y-1.5 transition-transform duration-300">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
-                    <value.icon className="w-7 h-7 text-brand-600 dark:text-brand-400" />
+                  <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mx-auto mb-5 hover:scale-110 transition-transform">
+                    <value.icon className="w-7 h-7 text-brand-400" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-strong leading-relaxed">{value.desc}</p>
@@ -123,7 +123,7 @@ export default function About() {
       <section className="surface-alt py-20">
         <div className="container-page">
           <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-mono text-brand-600 dark:text-brand-400 tracking-widest uppercase">Our Journey</span>
+            <span className="text-xs font-mono text-brand-400 tracking-widest uppercase">Our Journey</span>
             <h2 className="section-title mt-3">How we got here</h2>
           </Reveal>
           <div className="max-w-3xl mx-auto">
@@ -135,7 +135,7 @@ export default function About() {
                       <div className="w-12 h-12 rounded-full bg-brand-500 text-black flex items-center justify-center font-bold text-sm flex-shrink-0">
                         {i + 1}
                       </div>
-                      {i < milestones.length - 1 && <div className="w-0.5 flex-1 bg-brand-200 dark:bg-brand-500/20 mt-2" />}
+                      {i < milestones.length - 1 && <div className="w-0.5 flex-1 bg-brand-500/20 mt-2" />}
                     </div>
                     <div className="pb-8">
                       <h3 className="font-bold text-lg mb-1">{m.year}</h3>
@@ -150,7 +150,7 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="bg-black dark:bg-neutral-900 py-16">
+      <section className="bg-neutral-900 py-16">
         <div className="container-page">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
